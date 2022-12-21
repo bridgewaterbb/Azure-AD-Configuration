@@ -3,7 +3,7 @@
 </p>
 
 <h1>Active Directory Deployed in Microsoft Azure</h1>
-In this lab I deployed Active Directory services, experimented with DNS resolution, and experimented with Fileshares & Permissions<br />
+In this lab I deployed Active Directory services, experimented with DNS resolution, and experimented with Fileshares & Permissions.<br />
 
 <h2>Technology Utilized</h2>
 
