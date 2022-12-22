@@ -56,7 +56,7 @@ Next I turned the server machine into a Domain Controller. I installed Active Di
 </p>
 <p>
 Next I created an admin account and normal user accounts with Active Directory Users and Computers. I created two new Organization Units (OU), Employees and Admins.
-  I created a new user and granted them Admin permissions. I then logged out of the DC and logged back in under this account. I then created other, normal, users. I then joined the client machine to my newly created domain. I verified the client machine was joined to the domain by viewing it in Active Directory Users and Computers on the DC machine. I then logged into the client machine as the admin user and enabled remote desktop for domain users. I verified RD was enabled by logging into the client machine as one of the normal users I created.
+  I created a new user and granted them Admin permissions. I then logged out of the DC and logged back in under this account. I then created other accounts with Domain User permisssions. I then joined the client machine to my newly created domain. I verified the client machine was joined to the domain by viewing it in Active Directory Users and Computers on the DC machine. I then logged into the client machine as the admin user and enabled remote desktop for domain users. I verified RD was enabled by logging into the client machine as one of the normal, Domain User accounts I created.
 </p>
 <br />
 
@@ -75,7 +75,7 @@ I experimented with DNS with the client and server(DC) machines. I tried to ping
 <img src="https://i.imgur.com/jeFCZJr.png" height="80%" width="80%" alt="Failed and Successful Ping"/>
 </p>
 <p>
-I then expiremented with manipulating my custom host's address and the client's DNS table. I changed the "mainframe" host's IPv4 address to "8.8.8.8". I then pinged the word mainframe from the client. I observed the output of the ping to return from the DC's address. This demonstrated the client machine did not request resolution from the DC, as the previous address for mainframe was stored in its own DNS table. I verfied the client's saved address for mainframe by looking at its DNS table. This was done from the command line (ipconfig /displaydns). I then flushed the client's DNS table from the command line (ipconfig /flushdns). I pinged the word mainframe again and observed the output to return from 8.8.8.8, demonstrating the client asked the DC for resolution. I also experimented with Alias resolution by adding a random word to DNS Manager and having it resolve to a specific URL.
+I changed the "mainframe" host's IPv4 address to "8.8.8.8". I then pinged the word mainframe from the client. I observed the output of the ping to return from the DC's address. This demonstrated the client machine did not request resolution from the DC, as the previous address for mainframe was stored in its own DNS table. I verfied the client's saved address for mainframe by looking at its DNS table. This was done from the command line (ipconfig /displaydns). I then flushed the client's DNS table from the command line (ipconfig /flushdns). I pinged the word mainframe again and observed the output to return from 8.8.8.8, demonstrating the client asked the DC for resolution. I also experimented with Alias resolution by adding a random word to DNS Manager and having it resolve to a specific URL.
 </p>
 <br />
 
